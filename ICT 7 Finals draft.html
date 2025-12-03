@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URSM LABORATORY SCHOOL</title>
+    <style>
+        /* Define URS Blue Colors for consistency */
+        :root {
+            --urs-deep-blue: #003366;
+            --urs-mid-blue: #0059b3;
+            --urs-light-blue: #e6f2ff;
+            --urs-faint-blue: #f0f8ff;
+            --text-color: #333; 
+            --light-text: #ffffff; 
+        }
+
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--urs-light-blue); 
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--urs-deep-blue); 
+            color: var(--light-text);
+            text-align: center;
+            padding: 20px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--urs-mid-blue); 
+            padding: 10px;
+            overflow-x: auto; 
+        }
+
+        /* Navigation Buttons */
+        .nav-button { 
+            background-color: var(--light-text);
+            border: 2px solid var(--urs-deep-blue); 
+            color: var(--urs-deep-blue);
+            padding: 10px 15px; 
+            margin: 0 5px; 
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase; 
+            font-weight: bold;
+            white-space: nowrap; 
+        }
+
+        .nav-button:hover, .nav-button.current-active { 
+            background-color: var(--urs-deep-blue);
+            color: var(--light-text);
+        }
+
+        /* Main Content and Sections */
+        main {
+            padding-bottom: 70px; 
+        }
+        
+        section {
+            display: none;
+            padding: 30px;
+            max-width: 900px; 
+            margin: 20px auto; 
+            text-align: center;
+            
+            /* Apply the animation name and duration */
+            animation: slideInFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            
+            /* Background image settings */
+            background-image: url('University of Rizal System - Morong.jpeg'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            
+            /* Dark overlay for text visibility */
+            background-color: rgba(0, 0, 0, 0.6); 
+            background-blend-mode: multiply; 
+            
+            /* Set default text color to white for contrast */
+            color: var(--light-text); 
+            
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+        }
+        
+        /* DYNAMIC ANIMATION KEYFRAMES */
+        @keyframes slideInFade {
+            from {
+                opacity: 0;
+                transform: translateX(10px); 
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0); 
+            }
+        }
+
+        .active {
+            display: block;
+        }
+
+        h2 {
+            color: var(--light-text); 
+            border-bottom: 2px solid var(--light-text); 
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+             color: var(--light-text); 
+        }
+
+        /* Principal Section Styling */
+        #principal img {
+            border-radius: 50%; 
+            border: 5px solid var(--light-text); 
+            object-fit: cover; 
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Map Styling */
+        #where iframe {
+            max-width: 100%; 
+            height: 300px;
+            border: 0; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+
+        /* FAQ Styling */
+        .faq-item {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+            border-left: 5px solid var(--urs-mid-blue); 
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: var(--light-text); 
+        }
+        
+        .faq-item h3 {
+            color: var(--light-text); 
+            margin-top: 0;
+        }
+        
+        .contact-box {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(0, 51, 102, 0.9); 
+            color: var(--light-text);
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .contact-box a {
+            color: var(--urs-light-blue);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        /* === STEM SECTION STYLING MODIFIED === */
+        
+        #stem-track h2 {
+            color: var(--light-text); 
+            border-bottom: 2px solid var(--light-text); 
+        }
+        
+        /* Container styling for STEM lists */
+        .stem-content-box {
+            background-color: rgba(0, 51, 102, 0.9); 
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .stem-content-box h3 {
+             color: var(--urs-light-blue); 
+             margin-top: 10px;
+             padding-bottom: 5px;
+             border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+        
+        .stem-content-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .stem-content-box li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            /* Apply requested font changes to the list items */
+            font-size: 1.1em; /* Slightly larger font */
+            color: var(--urs-light-blue); /* Lighter color for better readability */
+        }
+        
+        .stem-content-box li::before {
+            content: "•";
+            color: var(--urs-light-blue);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* Footer Section */
+        footer {
+            background-color: var(--urs-deep-blue); 
+            color: var(--light-text);
+            text-align: center;
+            padding: 15px; 
+            position: fixed; 
+            bottom: 0;
+            width: 100%;
+            z-index: 10;
+        }
+        
+        /* === NEW FOOTER FONT STYLE APPLIED === */
+        footer p {
+            /* Using a decorative font stack for an elegant, polished look */
+            font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Script', cursive;
+            font-size: 1.6em; /* Slightly larger size for better impact */
+            font-weight: normal; 
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>URSM LABORATORY SCHOOL</h1>
+        <p>Excellence • Innovation • Service</p>
+    </header>
+
+    <nav id="main-nav">
+        <button class="nav-button" id="btn-about" onclick="showSection('about', this)">About</button>
+        <button class="nav-button" id="btn-where" onclick="showSection('where', this)">Where</button>
+        <button class="nav-button" id="btn-stem" onclick="showSection('stem-track', this)">STEM Track</button>
+        <button class="nav-button" id="btn-principal" onclick="showSection('principal', this)">Principal</button>
+        <button class="nav-button" id="btn-faq" onclick="showSection('faq', this)">FAQ & Contact</button>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About URSM LABORATORY SCHOOL</h2>
+            <p>URSM LABORATORY SCHOOL is a center of learning excellence committed to nurturing students to become globally competitive individuals. The school offers a variety of academic programs, laboratory-based activities, and student-centered learning experiences.</p>
+            <p>We aim to promote intellectual growth, moral integrity, and leadership among our learners.</p>
+        </section>
+
+        <section id="where">
+            <h2>Where Are We Located?</h2>
+            <p>URSM LABORATORY SCHOOL is located within the University of Rizal System campus, offering a safe and accessible environment for students.</p>
+            <p>Address: University of Rizal System, Morong, Rizal, Philippines</p>
+            <iframe 
+                src="https://maps.google.com/maps?q=University+of+Rizal+System+Morong&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="80%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+        
+        <section id="stem-track">
+            <h2>🔬 Science, Technology, Engineering, and Mathematics (STEM) Track</h2>
+            <p>The STEM Track is designed for students passionate about innovation, research, and problem-solving. We offer advanced curriculum and practical exposure to prepare learners for highly competitive university courses in science and engineering.</p>
+            
+            <div class="stem-content-box">
+                
+                <h3>Features of the STEM Strand</h3>
+                <ul>
+                    <li>Advanced Laboratory Work: Intensive use of university-grade laboratories for physics, chemistry, and biology experiments.</li>
+                    <li>Research Immersion: Students participate in capstone research projects guided by college professors.</li>
+                    <li>Mathematics & Logic: Focus on higher mathematics, including Calculus and Statistics, necessary for technical fields.</li>
+                </ul>
+            </div>
+            
+            <div class="stem-content-box" style="margin-top: 20px;">
+                <h3>Benefits of Choosing STEM</h3>
+                <ul>
+                    <li>Priority College Admission: Excellent preparation and edge for STEM courses.</li>
+                    <li>Critical Thinking Skills: Develops advanced analytical and problem-solving abilities applicable across all careers.</li>
+                    <li>Future-Ready Careers: Access to highly sought-after careers in technology, data science, and scientific research.</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 20px;">Choose STEM, choose innovation. Shape your future at URSM Laboratory School!</p>
+        </section>
+
+        <section id="principal">
+            <h2>Our Principal</h2>
+            <img src="Prof. Meilyn G. Javier.jpeg" alt="Principal Photo - Prof. Meilyn G. Javier" >
+            <h3>Prof. Meilyn G. Javier</h3>
+            <p>Prof. Javier is a passionate educator and visionary leader dedicated to guiding URSM LABORATORY SCHOOL toward excellence in education, innovation, and character development.</p>
+            <p>Under her leadership, the school continues to uphold its commitment to quality education and holistic development.</p>
+        </section>
+        
+        <section id="faq">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item">
+                <h3>Q: What programs does the school offer?</h3>
+                <p>A: We offer a complete K-12 curriculum with an emphasis on laboratory-based science, technology, engineering, and mathematics (STEM) activities, preparing students for university studies.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Q: When is the application period for the next school year?</h3>
+                <p>A: The application period typically runs from February to April. Please check the official URS website for exact dates and formal announcements regarding entrance examinations.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Q: Is transportation provided?</h3>
+                <p>A: The school does not provide dedicated transportation services. However, the campus is easily accessible via public utility vehicles and is centrally located within Morong, Rizal.</p>
+            </div>
+            
+            <div class="contact-box">
+                <h3>Have a Specific Question? Contact Us!</h3>
+                <p>If your question isn't listed, please reach out directly to the school office. We're here to help.</p>
+                <p>
+                    Email: <a href="mailto:info@ursm-labschool.edu.ph">info@ursm-labschool.edu.ph</a><br>
+                    Phone: (049) 123-4567 (Office Hours: 8:00 AM - 5:00 PM)
+                </p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>Nurturing Tomorrow’s Noblest</p> </footer>
+
+    <script>
+        /**
+         * Function to show the selected section and update button active state.
+         * @param {string} sectionId - The ID of the section to display.
+         * @param {HTMLElement} clickedButton - The button that was clicked.
+         */
+        function showSection(sectionId, clickedButton) {
+            // 1. Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // 2. Remove 'current-active' class from all buttons
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.classList.remove('current-active');
+            });
+
+            // 3. Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // 4. Add 'current-active' class to the clicked button
+            if (clickedButton) {
+                clickedButton.classList.add('current-active');
+            }
+        }
+        
+        // Initialization: Ensure the 'About' section is active and its button is highlighted on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the 'About' button using its ID for robust initialization
+            const initialButton = document.getElementById('btn-about'); 
+            
+            if (initialButton) {
+                // Activate the 'about' section and highlight the button
+                showSection('about', initialButton);
+            }
+        });
+    </script>
+
+</body>
+</html>
